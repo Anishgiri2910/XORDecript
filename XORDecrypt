@@ -1,0 +1,11 @@
+if __name__=="__main__":
+	hexEncrypt=raw_input()
+	change=zip(hexEncrypt[0::2],hexEncrypt[1::2])
+	word=[]
+	for j in range (len(change)):
+		word.append(change[j][0]+change[j][1])
+	for i in range (255):
+		combined=[]
+		for k in range (len(word)):
+			combined.append(chr(int(word[k],16)^i))
+		print ''.join(combined)
